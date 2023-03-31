@@ -1,4 +1,5 @@
 import socket
+from encrypt import vigenere_hill_encrypt
 
 HEADER = 64
 PORT = 8080
@@ -23,6 +24,7 @@ try:
     text = "CONNECTED"
     while text != "$quit":
         text = input()
+        text = vigenere_hill_encrypt(text, "chave", [[1, 2], [3, 4]])
         if text == "$quit":
             print("Desconectando...")
         else:

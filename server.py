@@ -1,6 +1,7 @@
 import socket 
 import threading
 import time
+from encrypt import vigenere_hill_decrypt
 
 HEADER = 64
 PORT = 8080
@@ -21,6 +22,7 @@ def handle_client(conn, addr):
             if msg_length:
                 msg_length = int(msg_length)
                 msg = conn.recv(msg_length).decode(FORMAT)
+                msg = vigenere_hill_decrypt(msg, "chave", [[1, 2], [3, 4]])
                 if msg == "!DISCONNECT":
                     connected = False
 
