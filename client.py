@@ -24,10 +24,10 @@ try:
     text = "CONNECTED"
     while text != "$quit":
         text = input()
-        text = vigenere_hill_encrypt(text, "chave", [[1, 2], [3, 4]])
         if text == "$quit":
             print("Desconectando...")
         else:
+            text = vigenere_hill_encrypt(text, "chave", [[1, 2], [3, 4]])
             send(text)
 
     send("!DISCONNECT")

@@ -41,7 +41,7 @@ def start():
         conn, addr = server.accept()
         thread = threading.Thread(target=handle_client, args=(conn, addr))
         thread.start()
-        print(f"[CONEXÕES ATIVAS] {threading.activeCount() - 1}")
+        print(f"[CONEXÕES ATIVAS] {threading.active_count() - 1}")
 
 
 print("[STARTING] Estabelecendo conexão com servidor!...")

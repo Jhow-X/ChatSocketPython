@@ -89,3 +89,13 @@ def vigenere_hill_decrypt(ciphertext, vigenere_key, hill_key):
     plaintext = hill_decrypt(ciphertext, hill_key)
     plaintext = vigenere_decrypt(plaintext, vigenere_key)
     return plaintext
+
+
+if __name__ == "__main__":
+    plaintext = "Hello World"
+    key_b = np.random.bytes(16)
+    key_ma
+    ciphertext = vigenere_hill_encrypt(plaintext, vigenere_key, hill_key)
+    print(ciphertext)
+    print(vigenere_hill_decrypt(ciphertext, vigenere_key, hill_key))
+    
